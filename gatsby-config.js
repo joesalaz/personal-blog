@@ -3,7 +3,7 @@
  *
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
-
+//hello this zis a comment
 module.exports = {
   /* Your site config here */
   plugins: [
@@ -27,7 +27,25 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`
       },
+      
     },
-
+      `gatsby-plugin-sharp`, 
+      `gatsby-transformer-sharp`,
+      `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions:[`.md`, `.mdx`],
+        gatsbyRemarkPlugins:[
+          {
+            resolve:`gatsby-remark-images`,
+            options:{
+              maxWidth: 1200
+            },
+          },
+        ],
+        
+      },
+    },
   ],
 }
